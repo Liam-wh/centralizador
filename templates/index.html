@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Centra · ESAM El Alto</title>
+  <meta name="description" content="Tu espacio de accesos académicos y administrativos de ESAM El Alto.">
+  <meta name="robots" content="noindex,nofollow"><meta name="theme-color" content="#07265c">
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/vendor/bootstrap.min.css">
+  <link rel="stylesheet" href="/vendor/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="/assets/styles.css">
+  <script src="/assets/app.js" defer></script>
+</head>
+<body>
+<a class="skip-link" href="#main">Saltar al contenido</a>
+<aside class="sidebar" aria-label="Navegación principal">
+  <a class="brand" href="/" aria-label="ESAM El Alto, inicio"><span class="logo-frame"><img src="/assets/logo-esam.png" alt="ESAM Escuela de Negocios El Alto"></span></a>
+  <div class="workspace-name"><span class="workspace-dot"></span> ESPACIO ACADÉMICO</div>
+  <p class="nav-caption">MI ESPACIO</p>
+  <nav class="main-nav">
+    <button class="nav-item active" data-view="all" aria-pressed="true"><i class="bi bi-grid" aria-hidden="true"></i> Todos los accesos <span>{{ links|length }}</span></button>
+    <button class="nav-item" data-view="favorites" aria-pressed="false"><i class="bi bi-star" aria-hidden="true"></i> Favoritos <span id="favorite-count">0</span></button>
+    <button class="nav-item" data-view="recent" aria-pressed="false"><i class="bi bi-clock-history" aria-hidden="true"></i> Recientes</button>
+  </nav>
+  <div class="sidebar-bottom"><div class="help-symbol"><i class="bi bi-box-arrow-up-right" aria-hidden="true"></i></div><p>Cada recurso se abre en una nueva pestaña.</p><span>ESAM · EL ALTO <i class="bi bi-arrow-up-right" aria-hidden="true"></i></span></div>
+</aside>
+<div class="app-shell">
+  <header class="topbar"><span class="breadcrumb-label">Centra <span>/</span> Centralizador de enlaces</span><span class="campus-tag"><i class="bi bi-geo-alt" aria-hidden="true"></i> Sede El Alto</span></header>
+  <main id="main">
+    <section class="intro"><div><div class="eyebrow"><span></span> GESTIÓN ACADÉMICA</div></div><span class="resource-total"><b>{{ links|length }}</b> accesos disponibles</span></section>
+    <div class="search-container"><i class="bi bi-search" aria-hidden="true"></i><label class="visually-hidden" for="search">Buscar accesos</label><input id="search" type="search" placeholder="Buscar un enlace, documento o plataforma…" autocomplete="off"><button id="clear-search" aria-label="Limpiar búsqueda" hidden><i class="bi bi-x-lg" aria-hidden="true"></i></button><kbd aria-hidden="true">/</kbd></div>
+    <section class="quick-panel" aria-label="Plataformas institucionales"><div class="quick-title"><span class="quick-icon"><i class="bi bi-mortarboard" aria-hidden="true"></i></span><div><strong>Conecta con tu campus</strong><p>Tus plataformas institucionales, siempre a mano.</p></div></div><div class="quick-actions"><a href="https://esam.edu.bo/portal/" target="_blank" rel="noopener noreferrer" data-open-id="portal">Portal ESAM <i class="bi bi-arrow-up-right" aria-hidden="true"></i><span class="visually-hidden"> (nueva pestaña)</span></a><a href="https://sites.google.com/esam.edu.bo/esamportal/inicio/moodle-el-alto?authuser=0" target="_blank" rel="noopener noreferrer" data-open-id="esam-central">ESAM central <i class="bi bi-arrow-up-right" aria-hidden="true"></i><span class="visually-hidden"> (nueva pestaña)</span></a></div></section>
+    <section class="directory" aria-labelledby="section-title">
+      <div class="directory-heading"><h2 id="section-title">Todos los accesos</h2><span id="result-count" role="status" aria-live="polite">{{ links|length }} recursos</span></div>
+      <div class="filters" aria-label="Filtrar por área"><button class="filter active" data-category="all" aria-pressed="true">Todas las áreas</button>{% for category in categories %}<button class="filter" data-category="{{ category }}" aria-pressed="false">{{ category }}</button>{% endfor %}</div>
+      <div class="resource-grid" id="resource-grid">
+      {% for link in links %}
+        <article class="resource-card" data-id="{{ link.id }}">
+          <div class="card-top"><span class="resource-icon {{ 'folder-icon' if link.service == 'Google Drive' else 'sheet-icon' if link.service == 'Google Sheets' else 'site-icon' }}"><i class="bi bi-{{ link.icon }}" aria-hidden="true"></i></span><button class="favorite-button" data-favorite="{{ link.id }}" aria-label="Añadir {{ link.title }} a favoritos" aria-pressed="false"><i class="bi bi-star" aria-hidden="true"></i></button></div>
+          <span class="category-label">{{ link.category }}</span><h3>{{ link.title }}</h3><p class="card-description">{{ link.description }}</p>
+          <div class="service-label"><span class="service-dot {{ 'drive' if link.service == 'Google Drive' else 'sheets' if link.service == 'Google Sheets' else 'web' }}"></span>{{ link.service }}</div>
+          <div class="card-actions"><a class="open-resource" href="{{ link.url }}" target="_blank" rel="noopener noreferrer" data-open-id="{{ link.id }}">Abrir recurso <i class="bi bi-arrow-up-right" aria-hidden="true"></i><span class="visually-hidden">: {{ link.title }} (nueva pestaña)</span></a><button class="detail-button" data-detail="{{ link.id }}" aria-label="Ver detalles de {{ link.title }}"><i class="bi bi-three-dots" aria-hidden="true"></i></button></div>
+        </article>
+      {% endfor %}
+      </div>
+      <div class="empty-state" id="empty-state" hidden><i class="bi bi-search" aria-hidden="true"></i><h3 id="empty-title">No encontramos coincidencias</h3><p id="empty-description">Prueba otra palabra o cambia el área seleccionada.</p><button class="btn btn-outline-primary" id="reset-filters">Ver todos los accesos</button></div>
+    </section>
+    <footer><span><strong>centra</strong> <span class="footer-divider">|</span> ESAM El Alto</span><span>Organiza tu día. Simplifica tu gestión.</span></footer>
+    <noscript><p class="alert alert-info">Los enlaces funcionan sin JavaScript. Actívalo para buscar, filtrar y guardar favoritos.</p></noscript>
+  </main>
+</div>
+<dialog id="resource-dialog" aria-labelledby="dialog-title"><div class="dialog-content"><button id="close-dialog" class="dialog-close" aria-label="Cerrar detalles"><i class="bi bi-x-lg" aria-hidden="true"></i></button><span class="dialog-eyebrow" id="dialog-category"></span><h2 id="dialog-title"></h2><p id="dialog-description"></p><div class="dialog-service"><i class="bi bi-link-45deg" aria-hidden="true"></i><span id="dialog-service"></span></div><label for="dialog-url">Enlace del recurso</label><input id="dialog-url" readonly><p class="dialog-note">Se abrirá en otra pestaña. Usa tu cuenta con acceso al recurso.</p><div class="dialog-actions"><button class="btn btn-light" id="copy-link"><i class="bi bi-copy" aria-hidden="true"></i> Copiar enlace</button><a class="btn btn-primary" id="dialog-open" target="_blank" rel="noopener noreferrer">Abrir recurso <i class="bi bi-arrow-up-right" aria-hidden="true"></i></a></div></div></dialog>
+<div class="notice" id="notice" role="status" aria-live="polite" hidden></div>
+<script type="application/json" id="resources-data">{{ links|tojson }}</script>
+</body></html>

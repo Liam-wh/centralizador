@@ -1,0 +1,112 @@
+[
+  {
+    "id": "baja-participante",
+    "title": "Baja participante",
+    "category": "Participantes",
+    "icon": "person-dash",
+    "service": "Google Sheets",
+    "description": "Gestiona las bajas y el registro de participantes.",
+    "keywords": "retiro alumno estudiante baja",
+    "url": "https://docs.google.com/spreadsheets/d/17N9VYB07XGo2oCBlK6w_v_27n-lIQFWeQKJlthhrEQg/edit?gid=1532913610#gid=1532913610"
+  },
+  {
+    "id": "drive-documentos",
+    "title": "Drive documentos",
+    "category": "Documentación",
+    "icon": "folder2-open",
+    "service": "Google Drive",
+    "description": "Encuentra y organiza la documentación académica.",
+    "keywords": "archivos documentos carpetas",
+    "url": "https://drive.google.com/drive/folders/13_m17HSLwZewi53r1u6X_b0EHy8YBE0F"
+  },
+  {
+    "id": "cronograma",
+    "title": "Cronograma",
+    "category": "Académico",
+    "icon": "calendar3",
+    "service": "Google Sheets",
+    "description": "Consulta la programación y las fechas de actividades.",
+    "keywords": "calendario fechas horarios agenda",
+    "url": "https://docs.google.com/spreadsheets/d/16FYNy7TVooajRUlv1dClS18Z49ajlBUKKkDzdbei-IY/edit?gid=1897244294#gid=1897244294"
+  },
+  {
+    "id": "sesiones-semanales",
+    "title": "Sesiones semanales",
+    "category": "Académico",
+    "icon": "collection-play",
+    "service": "Google Sheets",
+    "description": "Accede a la organización de las sesiones de la semana.",
+    "keywords": "clases docente tutor semana",
+    "url": "https://docs.google.com/spreadsheets/d/1Uo2ne-trds3qT5Ka_tdhqt7FG0KroDd7JzkiiUy7jy0/edit?gid=895591991#gid=895591991"
+  },
+  {
+    "id": "nivelaciones",
+    "title": "Nivelaciones",
+    "category": "Académico",
+    "icon": "mortarboard",
+    "service": "Google Drive",
+    "description": "Revisa los archivos de nivelación académica.",
+    "keywords": "modulos aprobación regularizacion",
+    "url": "https://drive.google.com/drive/folders/11WPMIXmJp_moIiIwZTJODYmZ2Ysc0pAZ"
+  },
+  {
+    "id": "planilla-asistencia",
+    "title": "Planilla de asistencia",
+    "category": "Participantes",
+    "icon": "clipboard-check",
+    "service": "Google Drive",
+    "description": "Consulta las planillas de asistencia de participantes.",
+    "keywords": "presencia asistencias alumnos estudiantes",
+    "url": "https://drive.google.com/drive/folders/171Gm06wZSHqGD9Cot-UVeHe5Qe9w5rk_"
+  },
+  {
+    "id": "drive-mkt",
+    "title": "Drive MKT asesores",
+    "category": "Administración",
+    "icon": "megaphone",
+    "service": "Google Sheets",
+    "description": "Accede a la planilla de marketing y asesores.",
+    "keywords": "marketing comercial ventas asesor",
+    "url": "https://docs.google.com/spreadsheets/d/1iF8EogX7EapgfYrzeGAIkcwz8b966hADF6PrO42llnA/edit?gid=1904157515#gid=1904157515"
+  },
+  {
+    "id": "pago-central",
+    "title": "Pago central",
+    "category": "Administración",
+    "icon": "wallet2",
+    "service": "Google Sheets",
+    "description": "Consulta la planilla central de pagos.",
+    "keywords": "finanzas cobros cuotas pagos",
+    "url": "https://docs.google.com/spreadsheets/d/1QQbMopix6oouAMAGe1b0qEXbAjJNGdEM/edit?gid=1176652880#gid=1176652880"
+  },
+  {
+    "id": "portal",
+    "title": "Portal",
+    "category": "Plataformas",
+    "icon": "window",
+    "service": "Sitio web",
+    "description": "Ingresa al portal institucional de ESAM.",
+    "keywords": "web plataforma institucional",
+    "url": "https://esam.edu.bo/portal/"
+  },
+  {
+    "id": "esam-central",
+    "title": "ESAM central",
+    "category": "Plataformas",
+    "icon": "buildings",
+    "service": "Google Sites",
+    "description": "Accede a ESAM central y Moodle El Alto.",
+    "keywords": "campus virtual moodle aula central",
+    "url": "https://sites.google.com/esam.edu.bo/esamportal/inicio/moodle-el-alto?authuser=0"
+  },
+  {
+    "id": "seguimiento-documentos",
+    "title": "Seguimiento documentos",
+    "category": "Documentación",
+    "icon": "file-earmark-check",
+    "service": "Google Sheets",
+    "description": "Revisa el seguimiento de la documentación.",
+    "keywords": "entrega requisitos titulacion trámite seguimiento",
+    "url": "https://docs.google.com/spreadsheets/d/1ulMFdkO7aOTWlh_rh9kavF-01Q5IF6uEK4fCQ-zJs-M/edit?usp=sharing"
+  }
+]
